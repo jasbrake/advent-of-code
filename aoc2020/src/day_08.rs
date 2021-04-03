@@ -132,7 +132,7 @@ impl Program {
     fn run_and_fix(&mut self) {
         loop {
             // TODO detect when program correctly finishes
-            self.run()
+            panic!("Not implemented")
         }
     }
 }
@@ -157,6 +157,6 @@ fn acc_value_first_run(instructions: &[Instruction]) -> i32 {
 #[aoc(day8, part2)]
 fn program_fix_loop(instructions: &[Instruction]) -> i32 {
     let mut program = Program::new(instructions.to_vec());
-    program.run();
+    program.run_and_fix();
     program.val
 }
