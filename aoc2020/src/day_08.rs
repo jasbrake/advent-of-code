@@ -102,10 +102,10 @@ impl Program {
 
             Opcode::Jmp(v) => {
                 if v < 0 {
-                    if v.abs() as usize > self.pc {
+                    if v.unsigned_abs() as usize > self.pc {
                         panic!("Error executing program: PC underflowed")
                     }
-                    self.pc -= v.abs() as usize;
+                    self.pc -= v.unsigned_abs() as usize;
                 } else {
                     self.pc += v as usize;
                 }

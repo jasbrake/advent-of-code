@@ -12,7 +12,7 @@ fn parse_seat(s: &str) -> u32 {
 fn input_generator(input: &str) -> Vec<u32> {
   input
     .split('\n')
-    .map(|l| parse_seat(l))
+    .map(parse_seat)
     .collect()
 }
 

@@ -72,7 +72,7 @@ fn parse_passport(s: &str) -> Option<Passport> {
 #[aoc_generator(day4)]
 fn input_generator(input: &str) -> Vec<Passport> {
   let entries = input.split("\n\n");
-  entries.filter_map(|e| parse_passport(e)).collect()
+  entries.filter_map(parse_passport).collect()
 }
 
 #[aoc(day4, part1)]

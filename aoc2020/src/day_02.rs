@@ -11,7 +11,7 @@ struct PasswordPolicy {
 impl PasswordPolicy {
     fn parse(s: &str) -> PasswordPolicy {
         let re = Regex::new(r"^(?P<lower>\d+)-(?P<upper>\d+)\s(?P<character>.):\s(?P<password>.+)").unwrap();
-        let cap = re.captures(&s).unwrap();
+        let cap = re.captures(s).unwrap();
         PasswordPolicy {
             password: cap.name("password").unwrap().as_str().to_owned(),
             policy_char: cap.name("character").unwrap().as_str().parse::<char>().unwrap(),
@@ -37,7 +37,7 @@ impl PasswordPolicy {
 fn input_generator(input: &str) -> Vec<PasswordPolicy> {
     input
       .lines()
-      .map(|l| PasswordPolicy::parse(l))
+      .map(PasswordPolicy::parse)
       .collect()
 }
 
