@@ -34,8 +34,6 @@ impl ParamMode {
 }
 
 fn run(program: &mut [i32], input: Receiver<i32>, output: Sender<i32>) -> Option<i32> {
-    // let mut output = vec![];
-    // let mut input_iter = input.iter();
     let mut last_output: Option<i32> = None;
     let mut pc: usize = 0; // instruction pointer
 
