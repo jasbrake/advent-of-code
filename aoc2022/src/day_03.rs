@@ -31,7 +31,7 @@ fn p1(input: &[Vec<char>]) -> u32 {
         .collect::<Vec<char>>()
         .iter()
         .map(priority)
-        .sum::<u32>()
+        .sum()
 }
 
 #[aoc(day3, part2)]
@@ -53,5 +53,5 @@ fn p2(input: &[Vec<char>]) -> u32 {
         .collect::<Vec<char>>()
         .iter()
         .map(priority)
-        .sum::<u32>()
+        .sum()
 }
